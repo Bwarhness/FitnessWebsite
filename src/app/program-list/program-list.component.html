@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+
+  <div class="col-xs-12 col-md-4">
+    <div class="card">
+      <h3 class="card-header">Find dit program!</h3>
+      <div class="card-block">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Navn</span>
+            <input [(ngModel)]="searchName"  name="SearchName" type="text" class="form-control" placeholder="Navn" aria-describedby="basic-addon1">
+          </div>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Navn</span>
+            <input [(ngModel)]="programService.SearchName"  name="SearchName" type="text" class="form-control" placeholder="Navn" aria-describedby="basic-addon1">
+          </div>
+          <br>
+          
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Navn</span>
+            <input [(ngModel)]="programService.SearchName"  name="SearchName" type="text" class="form-control" placeholder="Navn" aria-describedby="basic-addon1">
+          </div>
+          <br>
+          
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Navn</span>
+            <input [(ngModel)]="programService.SearchName"  name="SearchName" type="text" class="form-control" placeholder="Navn" aria-describedby="basic-addon1">
+          </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-8">
+          <table class="table">
+        <thead>
+          <tr>
+            <th>Program Name</th>
+            <th>Program type</th>
+            <th>Sværhedsgrad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let program of programService.programs | filter:searchName | sort  ">
+            <td>{{program.Name}}</td>
+            <td>{{program.SkillLevel}}</td>
+            <td>{{program.TimesToRepeat}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+  </div>
+</div>
+
+</div>
