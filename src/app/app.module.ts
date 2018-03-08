@@ -7,14 +7,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ProgramListComponent } from './program-list/program-list.component';
 import { IndexComponent } from './index/index.component';
-import { LoginService } from './login.service';
-import { ProgramService } from './program.service';
+import { LoginService } from './services/login.service';
+import { ProgramService } from './services/program.service';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
 import { ProgramEditComponent } from './program-edit/program-edit.component';
 import { ExerciseEditComponent } from './exercise-edit/exercise-edit.component';
-import { ExerciseService } from './exercise.service';
+import { ExerciseService } from './services/exercise.service';
 import { FilterPipe } from './filter.pipe';
 import { SortPipe } from './sort.pipe';
+import { ApiService } from './services/api.service';
+import { LoadingModule } from 'ngx-loading';
+
 const appRoutes: Routes = [
   { path: 'index', component: IndexComponent, canActivate: [LoginService]  },
   { path: 'login', component: LoginComponent },
@@ -39,6 +44,8 @@ const appRoutes: Routes = [
     SortPipe
   ],
   imports: [
+    LoadingModule,
+    HttpClientModule,    
     FormsModule,
     HttpModule,
     RouterModule.forRoot(
@@ -48,7 +55,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot(),
     BrowserModule
   ],
-  providers: [LoginService, ProgramService, ExerciseService],
+  providers: [LoginService, ProgramService, ExerciseService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

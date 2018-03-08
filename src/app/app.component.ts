@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from './login.service';
-import { ProgramService } from './program.service';
+import { LoginService } from './services/login.service';
+import { ProgramService } from './services/program.service';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { ProgramService } from './program.service';
 export class AppComponent{
   title = 'app';
 
-  constructor( public login:LoginService, public programService: ProgramService) {
+  constructor( public login:LoginService, public programService: ProgramService, public _api:ApiService) {
     console.log(this.programService.getPrograms());
 
   }

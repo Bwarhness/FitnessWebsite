@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import { Program } from './models/program.model';
+import { Program } from '../models/program.model';
 
 @Injectable()
 export class ProgramService {
