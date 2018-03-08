@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { LoginService } from '../login.service';
-import { ProgramService } from '../program.service';
+import { LoginService } from '../services/login.service';
+import { ProgramService } from '../services/program.service';
 
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProgramService } from '../program.service';
-import { ExerciseService } from '../exercise.service';
+import { ProgramService } from '../services/program.service';
+import { ExerciseService } from '../services/exercise.service';
 
 import { Session, Exercise} from '../models/program.model';
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ExerciseService } from '../exercise.service';
+import { ExerciseService } from '../services/exercise.service';
 import { Exercise } from '../models/program.model';
 
 @Component({
