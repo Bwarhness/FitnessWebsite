@@ -1,9 +1,12 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+
 <div class="container">
   <form class="form-horizontal" #exerciseForm="ngForm" (ngSubmit)="logIn(exerciseForm)">
       <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
               <h2>Please Login</h2>
+              <h3 class="text-danger">{{errorMessage}}</h3>
               <hr>
           </div>
       </div>

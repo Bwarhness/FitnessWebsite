@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class ApiService {
-  Token:any;
+  Token:any = "";
   Api = "http://fitnessapi.webdesk-dev.dk"
   constructor(public http: HttpClient) { }
   generateHTTPPost(endpoint, body){

@@ -18,6 +18,8 @@ import { ExerciseService } from './services/exercise.service';
 import { FilterPipe } from './filter.pipe';
 import { SortPipe } from './sort.pipe';
 import { ApiService } from './services/api.service';
+import { LoadingModule } from 'ngx-loading';
+
 const appRoutes: Routes = [
   { path: 'index', component: IndexComponent, canActivate: [LoginService]  },
   { path: 'login', component: LoginComponent },
@@ -42,6 +44,7 @@ const appRoutes: Routes = [
     SortPipe
   ],
   imports: [
+    LoadingModule,
     HttpClientModule,    
     FormsModule,
     HttpModule,

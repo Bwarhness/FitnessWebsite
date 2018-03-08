@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Exercise } from './models/program.model';
+import { Exercise } from '../models/program.model';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 @Injectable()
 export class ExerciseService {
