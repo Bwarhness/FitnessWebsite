@@ -1,23 +1,22 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded" *ngIf="login.loggedIn">
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded" >
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" routerLink="/index" routerLinkActive="active">Fitnesser</a>
+  <a class="navbar-brand"><img class="logo" src="assets/img/trans-logo.png"></a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="nav">
+    <ul class="ml-auto nav">
       <li class="nav-item">
-        <a class="nav-link active" routerLink="/program-list" routerLinkActive="active">Program liste</a>
+        <a class="nav-link" routerLink="/program-list" routerLinkActive="active">Program liste</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" routerLink="/program" routerLinkActive="active">Create program</a>
+        <a class="nav-link" routerLink="/program" routerLinkActive="active">Lav program</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link active" routerLink="/exercise" routerLinkActive="active">Create Exercise</a>
+          <a class="nav-link" routerLink="/exercise" routerLinkActive="active">Lav øvelse</a>
         </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/login" routerLinkActive="active">Link</a>
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Log ud</a>
       </li>
     </ul>
   </div>

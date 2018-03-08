@@ -7,11 +7,6 @@ export class LoginService implements CanActivate {
 
 loggedIn: boolean = false;
   constructor( private router: Router, public http:HttpClient, public _api:ApiService ) { }
-=======
-loggedIn: boolean = true;
-  constructor( private router: Router) { }
->>>>>>> bbe2db736d232f6f8d1eb469359935ff634c9466:src/app/login.service.ts
-
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     this.loggedIn = true;
     if (this.loggedIn) {

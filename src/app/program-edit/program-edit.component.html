@@ -31,9 +31,6 @@
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Sværhedsgrad</span>
                         <select name="" id="" class="form-control" [(ngModel)]="sProgram.Difficulty">
-                            <option value="0">Beginner</option>
-                            <option value="10">Intermediate</option>
-                            <option value="20">Advanced</option>
                             <option value="0">Begynder</option>
                             <option value="10">Øvede</option>
                             <option value="20">Expert</option>
@@ -45,7 +42,6 @@
                         <span class="input-group-addon" id="basic-addon1">Beskrivelse</span>
                         <textarea [(ngModel)]="sProgram.Description" class="form-control" id="exampleTextarea" rows="12" placeholder=""></textarea>
                     </div>
-
                     <br>
                     <button  class="btn btn-block btn-success navbar-brand" (click)="saveProgram()">Save</button>
                 </div>
