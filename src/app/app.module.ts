@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   { path: 'program', component: ProgramEditComponent, canActivate: [LoginService]  },
   { path: 'exercise', component: ExerciseEditComponent, canActivate: [LoginService]  },
   { path: '',
-    redirectTo: '/index',
+    redirectTo: '/program-list',
     pathMatch: 'full'
   },
 ];

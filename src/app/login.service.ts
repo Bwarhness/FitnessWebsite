@@ -3,10 +3,11 @@ import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from
 
 @Injectable()
 export class LoginService implements CanActivate {
-loggedIn: boolean = false;
+loggedIn: boolean = true;
   constructor( private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    this.loggedIn = true;
     if (this.loggedIn) {
       return true;
     } else {
