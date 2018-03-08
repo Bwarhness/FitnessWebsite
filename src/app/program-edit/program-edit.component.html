@@ -14,7 +14,7 @@
                 <div class="card-block">
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Session gentagelser</span>
-                        <input [(ngModel)]="sProgram.Duration" name="SearchName" type="number" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                        <input [(ngModel)]="sProgram.TimesToRepeat" name="SearchName" type="number" class="form-control" placeholder="" aria-describedby="basic-addon1">
                         <span class="input-group-addon" id="basic-addon2">Gange</span>
                     </div>
                     <br>
@@ -114,5 +114,5 @@
 
 </div>
 <nav class="navbar fixed-bottom navbar-light bg-light text-center">
-    <a  class="btn btn-block btn-warning navbar-brand" href="#">Save</a>
+    <button  class="btn btn-block btn-warning navbar-brand" (click)="saveProgram()">Save</button>
 </nav>

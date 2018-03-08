@@ -18,12 +18,18 @@ export class ProgramEditComponent implements OnInit {
      this.sProgram.Sessions.push(new Session());
      console.log(this.programService.selectedProgram);
    }
-   log(stuff){
+   saveProgram() {
+     this.programService.saveProgram(this.sProgram);
+     console.log(this.sProgram);
+   }
+   log(stuff) {
       console.log(stuff);
    }
    addExercise(session: Session) {
     session.Exercises.push(new Exercise('123', '123', 0, 1));
    }
+
+
 
   ngOnInit() {
   }

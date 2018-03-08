@@ -17,12 +17,18 @@ export class ProgramService {
       }}).map(response => {
       const programs = response.json();
       this.programs = programs;
+     console.log(this.programs);
       return programs;
     }).subscribe();
+   }
+   saveProgram(data) {
+     this._http.post(this.apiUrl, data).subscribe(
+       suc => {
+       }
+     );
    }
    addProgram() {
      this._http.post(this.apiUrl, {'value': '10'}).subscribe();
    }
 
-}
-
+  }

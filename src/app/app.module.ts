@@ -16,11 +16,11 @@ import { ExerciseService } from './exercise.service';
 import { FilterPipe } from './filter.pipe';
 import { SortPipe } from './sort.pipe';
 const appRoutes: Routes = [
-  { path: 'index', component: IndexComponent },
+  { path: 'index', component: IndexComponent, canActivate: [LoginService]  },
   { path: 'login', component: LoginComponent },
-  { path: 'program-list', component: ProgramListComponent },
-  { path: 'program', component: ProgramEditComponent },
-  { path: 'exercise', component: ExerciseEditComponent },
+  { path: 'program-list', component: ProgramListComponent, canActivate: [LoginService]  },
+  { path: 'program', component: ProgramEditComponent, canActivate: [LoginService]  },
+  { path: 'exercise', component: ExerciseEditComponent, canActivate: [LoginService]  },
   { path: '',
     redirectTo: '/index',
     pathMatch: 'full'

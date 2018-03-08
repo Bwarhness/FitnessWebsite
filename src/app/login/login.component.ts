@@ -8,7 +8,9 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public login: LoginService) { }
+  constructor(public login: LoginService) {
+    this.login.loggedIn = false;
+   }
 
   ngOnInit() {
   }

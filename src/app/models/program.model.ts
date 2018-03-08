@@ -1,7 +1,7 @@
 export class Program {
     Id: string;
     Title: string;
-    Duration: number;
+    TimesToRepeat: number;
     Type: number;
     Difficulty: number;
     Description: string;
