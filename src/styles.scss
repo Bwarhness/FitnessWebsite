@@ -59,3 +59,56 @@ td {
 .BorderlessInput {
     color:white;
 }
+
+.btn-primary {
+    background-color:#1ec494;
+    border-color:#1ec494;;
+    color:white;
+}
+
+.btn-primary:hover {
+    background-color:#00ffb6;
+    border-color:#00ffb6;
+    color:white;
+}
+
+.btn-success {
+    background-color:#1ec494;
+    border-color:#1ec494;
+}
+
+.btn-success:hover {
+    Background-color:#00ffb6;
+    Border-color:#00ffb6;
+}
+
+.btn-block{
+    background-color:#1ec494;
+    border-color:#1ec494;
+}
+
+.btn-warning {
+    background-color:#1ec494;
+    border-color:#1ec494;
+}
+
+.btn-warning:hover {
+    Background-color:#00ffb6;
+    Border-color:#00ffb6;
+}
+
+.btn-danger {
+    background-color:#4F4F4F;
+    border-color:#4F4F4F;
+    color:#00ffb6;
+}
+
+.btn-danger:hover {
+    background-color:#00ffb6;
+    border-color:#00ffb6;
+    color:white;
+}
+.btn:disabled {
+    background-color:#1ec494;
+    border-color:#1ec494;
+}
