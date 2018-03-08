@@ -3,7 +3,7 @@ import { Exercise } from './models/program.model';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 @Injectable()
 export class ExerciseService {
-  apiUrl = 'http://localhost:50590/api/Exercise';
+  apiUrl = 'http://fitnessapi.webdesk-dev.dk/api/Exercise';
 
   SearchName = '';
   exercises: Exercise[] = new Array<Exercise>();

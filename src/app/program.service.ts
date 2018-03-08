@@ -4,7 +4,7 @@ import { Program } from './models/program.model';
 
 @Injectable()
 export class ProgramService {
-  apiUrl = 'http://localhost:50590/api/program';
+  apiUrl = 'http://fitnessapi.webdesk-dev.dk/api/program';
   SearchName = '';
   programs: any = [];
   selectedProgram: Program = new Program();
