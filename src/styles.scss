@@ -1,4 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+
+
 h1,h2,h3,h4,h5,h6{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Exo', sans-serif;
+}
+body {
+    background-color:#666666;
+}
+
+.card-block {
+    background-color:#eee;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+  }
+
+.card-header {
+    background-color:#4F4F4F;
+    color:white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.card {
+    border-bottom-left-radius:12px;
+    border-bottom-right-radius:12px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-color:#4F4F4F;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group-addon {
+    width:40%;
+    text-align:left;
+    background-color:#4F4F4F;
+    color:white;
+}
+
+.table {
+    color:white;
+}
+
+th {
+    border-bottom: 3px solid white!important;
+    border-top: 3px solid white!important;
+    font-family: 'Exo', sans-serif;
+}
+
+td {
+    border-color:white!important;
+}
+
+::placeholder {
+    color:white;
+    opacity:0.7;
+}
+
+.BorderlessInput {
+    color:white;
 }
