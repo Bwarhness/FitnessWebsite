@@ -21,12 +21,14 @@ import { ApiService } from './services/api.service';
 import { LoadingModule } from 'ngx-loading';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterComponent } from './register/register.component';
 const appRoutes: Routes = [
   { path: 'index', component: IndexComponent, canActivate: [LoginService]  },
   { path: 'login', component: LoginComponent },
   { path: 'program-list', component: ProgramListComponent, canActivate: [LoginService]  },
   { path: 'program', component: ProgramEditComponent, canActivate: [LoginService]  },
   { path: 'exercise', component: ExerciseEditComponent, canActivate: [LoginService]  },
+  { path: 'register', component: RegisterComponent},
   { path: '',
     redirectTo: '/program-list',
     pathMatch: 'full'
@@ -42,13 +44,14 @@ const appRoutes: Routes = [
     ProgramEditComponent,
     ExerciseEditComponent,
     FilterPipe,
-    SortPipe
+    SortPipe,
+    RegisterComponent
   ],
   imports: [
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     LoadingModule,
-    HttpClientModule,    
+    HttpClientModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(

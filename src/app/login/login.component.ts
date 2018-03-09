@@ -13,28 +13,26 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 loading:boolean = false;
-errorMessage = "";
+errorMessage = '';
   constructor(public login: LoginService, public http:HttpClient, public _api:ApiService, public router:Router) {
-    this._api.Token = "";
+    this._api.Token = '';
    }
 
   ngOnInit() {
   }
-  logIn(form){
-    this.loading = true
-    this.login.logIn(form.value.email,form.value.password).subscribe(
+  logIn(form) {
+    this.loading = true;
+    this.login.logIn(form.value.email, form.value.password).subscribe(
       (Token) => {
-        
         this.loading = false;
-        this.errorMessage = "";
+        this.errorMessage = '';
         this.router.navigate(['/program-list']);
-        
       },
       (data) => {
         this.loading = false;
         this.errorMessage = data.error.error_description;
         console.log(data);
       }
-    )
+    );
   }
 }

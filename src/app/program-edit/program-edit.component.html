@@ -43,6 +43,11 @@
                         <textarea [(ngModel)]="sProgram.Description" class="form-control" id="exampleTextarea" rows="12" placeholder=""></textarea>
                     </div>
                     <br>
+                    <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Billede URL</span>
+                            <input [(ngModel)]="sProgram.ImageUrl" class="form-control" id="exampleTextarea" type="text" placeholder="">
+                    </div>
+                    <br>
                     <button  class="btn btn-block btn-success navbar-brand" (click)="saveProgram()">Gem</button>
                 </div>
 

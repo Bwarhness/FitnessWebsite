@@ -5,10 +5,10 @@
     <div class="col-md-8 offset-md-2">
         <img class="mx-auto d-block" src="assets/img/trans-logo.png">
             <div class="card">
-                    <div class="card-header "><h2>Login</h2></div>
+                    <div class="card-header "><h2>Register dig</h2></div>
                     <div class="card-block">
 
-                <form class="form-horizontal" #exerciseForm="ngForm" (ngSubmit)="logIn(exerciseForm)">
+                <form class="form-horizontal" #exerciseForm="ngForm" (ngSubmit)="register(exerciseForm)">
                             
                     <div class="row">
                         <div class="col-md-8  offset-md-2">
@@ -19,7 +19,7 @@
                                     <div class="input-group-addon" style="width: 2.6rem">
                                         <i class="fa fa-at"></i>
                                     </div>
-                                    <input [(ngModel)]="Email" type="email" email name="email" class="form-control" id="email" placeholder="you@example.com"
+                                    <input [(ngModel)]="Email" type="email" email name="Email" class="form-control" id="email" placeholder="you@example.com"
                                         required autofocus>
                                 </div>
                             </div>
@@ -34,11 +34,10 @@
                                     <div class="input-group-addon" style="width: 2.6rem">
                                         <i class="fa fa-key"></i>
                                     </div>
-                                    <input [(ngModel)]="Password" type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                                    <input [(ngModel)]="Password" type="password" name="Password" class="form-control" id="password" placeholder="Password" required>
                                 </div>
                             </div>
-                            <h6 class="text-danger">{{errorMessage}}</h6>
-                        </div>  
+                        </div>
                         <div class="col-md-3">
                             <div class="form-control-feedback">
                                 <span class="text-danger align-middle">
@@ -46,20 +45,37 @@
                                 </span>
                             </div>
                         </div>
-                    </div>  
-                    <div class="row" style="padding-top: 1rem;padding-bottom: 1rem">
-                        <div class="col-md-8  offset-md-2">
-                            <button type="submit" class="btn btn-success btn-block"  [disabled]="!exerciseForm.valid">
-                                <i class="fa fa-sign-in"></i> Login </button>
-                        </div>
                     </div>
-                    <hr>
-                    <div class="row" style="padding-top: 1rem;padding-bottom: 1rem">
-                            <div class="col-md-8  offset-md-2">
-                                <button type="submit" class="btn btn-primary btn-block" routerLink="/register">
-                                     Register </button>
+                    <div class="row">
+
+                        <div class="col-md-8  offset-md-2">
+                            <div class="form-group">
+                                <label class="sr-only" for="password">Confirm Password</label>
+                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                    <div class="input-group-addon" style="width: 2.6rem">
+                                        <i class="fa fa-key"></i>
+                                    </div>
+                                    <input [(ngModel)]="ConfirmPassword" type="password" name="ConfirmPassword" class="form-control" id="confirmPassword" placeholder="Bekræft password" required>
+                                </div>
+                            </div>
+                            <h6 class="text-danger">{{errorMessage}}</h6>
+                            <h6 class="text-danger" *ngIf="ConfirmPassword != Password">Passwords er ikke ens</h6>
+                            
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-control-feedback">
+                                <span class="text-danger align-middle">
+                                    <!-- Put password error message here -->
+                                </span>
                             </div>
                         </div>
+                    </div>
+                    <div class="row" style="padding-top: 1rem;padding-bottom: 1rem">
+                        <div class="col-md-8  offset-md-2">
+                            <button type="submit" class="btn btn-success btn-block"  [disabled]="ConfirmPassword != Password || !exerciseForm.valid">
+                                 Kom i gang! </button>
+                        </div>
+                    </div>
                 </form>
             </div>
                 

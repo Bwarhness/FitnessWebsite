@@ -34,6 +34,20 @@
     </div>
   </div>
   <div class="col-xs-12 col-md-8">
+    <div class="row">
+
+      <div class="card col-md-4" *ngFor="let program of programService.programs | filter:searchName | sort  " >
+        <div class="row">
+
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+          
+        </div>
           <table class="table">
         <thead>
           <tr>
