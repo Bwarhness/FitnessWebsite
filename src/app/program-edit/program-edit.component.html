@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <h2 class="text-center">
-                <input type="text" [(ngModel)]="sProgram.Title" name="" placeholder="Titel" class="BorderlessInput">
+                <input type="text" [(ngModel)]="sProgram.Title" #required name="" placeholder="Titel" class="BorderlessInput">
             </h2>
             <hr>
         </div>
@@ -63,10 +63,9 @@
 
                                         <div class="input-group">
                                             <span class="input-group-addon" id="basic-addon1">Øvelse</span>
-                                            <select class="form-control" [(ngModel)]="exercise.Title">
+                                            <select class="form-control" [(ngModel)]="exercise.Id">
                                                 <option value="{{exercise.Id}}" *ngFor="let exercise of exerciseService.exercises | sort">{{exercise.Name}}</option>
                                             </select>
-
                                         </div>
                                         <br>
                                         <div class="input-group">
@@ -82,8 +81,12 @@
                                         <div class="input-group">
                                             <span class="input-group-addon" id="basic-addon1">Tempo </span>
                                             <input [(ngModel)]="exercise.Tempo" type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
-
-
+                                        </div>
+                                        <br>
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">Pause</span>
+                                            <input [(ngModel)]="exercise.Pause" type="number" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                            <span class="input-group-addon" id="basic-addon2">min</span>
                                         </div>
                                         <hr>
                                     </div>

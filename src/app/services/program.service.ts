@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import { Program } from '../models/program.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class ProgramService {
@@ -8,27 +9,32 @@ export class ProgramService {
   SearchName = '';
   programs: any = [];
   selectedProgram: Program = new Program();
-  constructor(private _http: Http) {
+  constructor(private _http: HttpClient, public toast:ToastrService) {
   }
    getPrograms() {
     return this._http.get(this.apiUrl, {
       params: {
         programName: this.SearchName
       }}).map(response => {
-      const programs = response.json();
+      const programs = response;
       this.programs = programs;
-     console.log(this.programs);
       return programs;
     }).subscribe();
    }
    saveProgram(data) {
      this._http.post(this.apiUrl, data).subscribe(
-       suc => {
+       (suc:any) => {
+         this.toast.success("Program Gemt")
+          this.selectedProgram.Id = suc.Id
+       },
+       (error) => {
+        this.toast.error("Fejl", error.error.error_description)
        }
      );
    }
    addProgram() {
-     this._http.post(this.apiUrl, {'value': '10'}).subscribe();
+     console.log(this.addProgram)
+     this._http.post(this.apiUrl, this.selectedProgram).subscribe();
    }
 
   }

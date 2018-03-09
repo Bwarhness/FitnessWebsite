@@ -3,6 +3,7 @@ import { LoginService } from '../services/login.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -23,9 +24,11 @@ errorMessage = "";
     this.loading = true
     this.login.logIn(form.value.email,form.value.password).subscribe(
       (Token) => {
+        
         this.loading = false;
         this.errorMessage = "";
         this.router.navigate(['/program-list']);
+        
       },
       (data) => {
         this.loading = false;

@@ -19,7 +19,8 @@ import { FilterPipe } from './filter.pipe';
 import { SortPipe } from './sort.pipe';
 import { ApiService } from './services/api.service';
 import { LoadingModule } from 'ngx-loading';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const appRoutes: Routes = [
   { path: 'index', component: IndexComponent, canActivate: [LoginService]  },
   { path: 'login', component: LoginComponent },
@@ -44,6 +45,8 @@ const appRoutes: Routes = [
     SortPipe
   ],
   imports: [
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     LoadingModule,
     HttpClientModule,    
     FormsModule,

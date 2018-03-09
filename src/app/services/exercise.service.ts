@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Exercise } from '../models/program.model';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { ToastrService } from 'ngx-toastr';
 @Injectable()
 export class ExerciseService {
   apiUrl = 'http://fitnessapi.webdesk-dev.dk/api/Exercise';
@@ -9,7 +10,7 @@ export class ExerciseService {
   exercises: Exercise[] = new Array<Exercise>();
   Observable: any;
 
-  constructor(private _http: Http) {
+  constructor(private _http: Http, public toast:ToastrService) {
     this.getExercises().subscribe((data: Exercise[]) => {
       this.exercises = data;
     });
@@ -25,6 +26,7 @@ export class ExerciseService {
   deleteExercise(Id) {
     this._http.delete(this.apiUrl + '/' + Id).subscribe(
       suc => {
+        this.toast.success("Øvelse slettet")
         this.getExercises().subscribe();
       }
     );
@@ -33,6 +35,7 @@ export class ExerciseService {
   addExercise(data) {
     this._http.post(this.apiUrl, data).subscribe(
       suc => {
+        this.toast.success("Øvelse gemt")        
         this.getExercises().subscribe();
       }
     );
