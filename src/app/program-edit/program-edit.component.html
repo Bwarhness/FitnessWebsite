@@ -68,7 +68,7 @@
 
                                         <div class="input-group">
                                             <span class="input-group-addon" id="basic-addon1">Øvelse</span>
-                                            <select class="form-control" [(ngModel)]="exercise.Id">
+                                            <select class="form-control" [(ngModel)]="exercise.Fk_Exercise">
                                                 <option value="{{exercise.Id}}" *ngFor="let exercise of exerciseService.exercises | sort">{{exercise.Name}}</option>
                                             </select>
                                         </div>
@@ -90,7 +90,7 @@
                                         <br>
                                         <div class="input-group">
                                             <span class="input-group-addon" id="basic-addon1">Pause</span>
-                                            <input [(ngModel)]="exercise.Pause" type="number" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                            <input [(ngModel)]="exercise.MaxBreakInSeconds" type="number" class="form-control" placeholder="" aria-describedby="basic-addon1">
                                             <span class="input-group-addon" id="basic-addon2">min</span>
                                         </div>
                                         <hr>

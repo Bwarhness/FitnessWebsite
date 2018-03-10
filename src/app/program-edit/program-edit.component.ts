@@ -21,6 +21,7 @@ export class ProgramEditComponent implements OnInit {
    saveProgram() {
      this.programService.saveProgram(this.sProgram);
      console.log(this.sProgram);
+     this.sProgram = {};
    }
    log(stuff) {
       console.log(stuff);
