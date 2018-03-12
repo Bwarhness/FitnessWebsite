@@ -17,7 +17,7 @@ export class ExerciseEditComponent implements OnInit {
     'VideoUrl' : ''
   };
   constructor(public exerciseService: ExerciseService  ) {
-
+console.log(exerciseService.exercises)
   }
   selectExercise(data) {
     console.log(data);
@@ -30,5 +30,15 @@ export class ExerciseEditComponent implements OnInit {
   }
   ngOnInit() {
   }
-
+  getDifficulty(number){
+    if (number == 0) {
+      return "Begynder"
+    }
+    if (number == 10) {
+      return "Advanceret"
+    }
+    if (number == 20) {
+      return "Expert"
+    }
+  }
 }

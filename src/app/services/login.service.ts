@@ -24,6 +24,7 @@ loggedIn: boolean = false;
     let data = 'username=' + name + '&password=' + password + '&grant_type=password';
     var reqHeader = new HttpHeaders({'Content-Type': 'application/x-www-urlencoded'})
     return this.http.post(this._api.Api + '/token', data, {headers:reqHeader}).map((p:any) => {
+
       this._api.Token = p.access_token;
     });
   }

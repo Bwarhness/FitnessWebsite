@@ -9,25 +9,6 @@
             <span class="input-group-addon" id="basic-addon1">Navn</span>
             <input [(ngModel)]="searchName"  name="SearchName" type="text" class="form-control" placeholder="Navn" aria-describedby="basic-addon1">
           </div>
-          <br>
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Navn</span>
-            <input [(ngModel)]="programService.SearchName"  name="SearchName" type="text" class="form-control" placeholder="Navn" aria-describedby="basic-addon1">
-          </div>
-          <br>
-          
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Navn</span>
-            <input [(ngModel)]="programService.SearchName"  name="SearchName" type="text" class="form-control" placeholder="Navn" aria-describedby="basic-addon1">
-          </div>
-          <br>
-          
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Navn</span>
-            <input [(ngModel)]="programService.SearchName"  name="SearchName" type="text" class="form-control" placeholder="Navn" aria-describedby="basic-addon1">
-          </div>
-
-
 
       </div>
 
@@ -35,25 +16,24 @@
   </div>
   <div class="col-xs-12 col-md-8">
     <div class="row">
-
-      <div class="card col-md-4" *ngFor="let program of programService.programs | filter:searchName | sort  " >
-        <div class="row">
-
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
+      <div class="col-md-4 cardholder" *ngFor="let program of programService.programs | filter:searchName" >
+      <div class="card">
+        <img class="card-img-top img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0cBKcS4kLcJ6Ls_ont6CsqjeAEdb8HKFDsHNlig49ooLCBVg3_Q" alt="Card image cap">
+        <div class="card-block">
+          <h5 class="card-title">{{program.Title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{getDifficulty(program.SkillLevel)}} - {{getTrainingType(program.TrainingType)}}</h6>
+          <p class="card-text">{{program.Description}} </p>
+          <br>
+          <button type="button" class="btn btn-primary btn-block hideBtn" (click)="programService.selectProgram(program.Id)">Vælg program</button>
         </div>
-          
-        </div>
-          <table class="table">
+      </div>
+          <!-- <table class="table">
         <thead>
           <tr>
             <th>Program Navn</th>
             <th>Program type</th>
             <th>Sværhedsgrad</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -61,10 +41,11 @@
             <td>{{program.Title}}</td>
             <td>{{program.SkillLevel}}</td>
             <td>{{program.TimesToRepeat}}</td>
+            <td><button type="button" class="btn btn-primary" (click)="programService.selectProgram(program.Id)">Vælg program</button></td>
           </tr>
 
         </tbody>
-      </table>
+      </table> -->
   </div>
 </div>
 

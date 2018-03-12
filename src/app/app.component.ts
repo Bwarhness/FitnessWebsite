@@ -10,9 +10,16 @@ import { ApiService } from './services/api.service';
 })
 export class AppComponent{
   title = 'app';
-
+  isCollapsed: boolean = true;
+ 
+  collapsed(event: any): void {
+    console.log(event);
+  }
+ 
+  expanded(event: any): void {
+    console.log(event);
+  }
   constructor( public login:LoginService, public programService: ProgramService, public _api:ApiService) {
-    console.log(this.programService.getPrograms());
 
   }
 }

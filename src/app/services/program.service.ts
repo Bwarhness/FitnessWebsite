@@ -10,13 +10,24 @@ export class ProgramService {
   SearchName = '';
   programs: any = [];
   selectedProgram: Program = new Program();
-  constructor(private _http: HttpClient, public toast:ToastrService, public _api:ApiService) {
+  constructor(private _http: HttpClient, public toast:ToastrService, public _api:ApiService,) {
     this.apiUrl = _api.Api + '/api/program';
+  }
+  selectProgram(Id){
+    console.log(Id)
+    this._api.generateHTTPPost('/api/Program/SelectProgram',{'Id':Id}).subscribe(
+      (data) => {
+        this.toast.success("Du har nu valgt et program", "Tilykke!")
+      }, (error) => {
+        this.toast.error(error.error.error_description, "Fejl!")
+      }
+    )
   }
    getPrograms() {
     return this._http.get(this.apiUrl, ).map(response => {
       const programs = response;
       this.programs = programs;
+      console.log(programs);
       return programs;
     }).subscribe();
    }

@@ -25,7 +25,13 @@ errorMessage = '';
         this.router.navigate(['/login']);
       },
       (error) => {
-        this.toast.warning( error.error.error_description, 'Fejl!');
+        console.log(error);
+        if (error.error.ModelState) {
+        this.toast.warning( "Bruger eksistere allerede", 'Fejl!');
+        }
+        else{
+        this.toast.warning( error.error.error_description, 'Fejl!');          
+        }
         this.errorMessage = error.error.error_description;
       },
       () => {

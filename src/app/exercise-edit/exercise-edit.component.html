@@ -61,16 +61,14 @@
         <thead>
           <tr>
             <th>Øvelses navn</th>
-            <th>Øvelses type</th>
             <th>Sværhedsgrad</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let exercise of exerciseService.exercises | sort | filter : blob ">
+          <tr *ngFor="let exercise of exerciseService.exercises | filterForExercise : blob : blub ">
             <td>{{exercise.Name}}</td>
-            <td>{{exercise.SkillLevel}}</td>
-            <td>{{exercise.TimesToRepeat}}</td>
+            <td>{{getDifficulty(exercise.Difficulty)}}</td>
             <td> 
                 <div class="btn-group mr-2 pull-right" role="group" aria-label="First group">
                     <button class="btn btn-warning" (click)="selectExercise(exercise)" >

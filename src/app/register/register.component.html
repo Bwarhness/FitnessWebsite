@@ -60,6 +60,8 @@
                             </div>
                             <h6 class="text-danger">{{errorMessage}}</h6>
                             <h6 class="text-danger" *ngIf="ConfirmPassword != Password">Passwords er ikke ens</h6>
+                            <h6 class="text-danger" *ngIf="ConfirmPassword.length < 6 && Password.length < 6 ">Minimum 6 tegn</h6>
+                            
                             
                         </div>
                         <div class="col-md-3">
@@ -72,7 +74,7 @@
                     </div>
                     <div class="row" style="padding-top: 1rem;padding-bottom: 1rem">
                         <div class="col-md-8  offset-md-2">
-                            <button type="submit" class="btn btn-success btn-block"  [disabled]="ConfirmPassword != Password || !exerciseForm.valid">
+                            <button type="submit" class="btn btn-success btn-block"  [disabled]="ConfirmPassword != Password || !exerciseForm.valid || (ConfirmPassword.length < 6 && Password.length < 6 )">
                                  Kom i gang! </button>
                         </div>
                     </div>

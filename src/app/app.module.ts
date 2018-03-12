@@ -22,6 +22,8 @@ import { LoadingModule } from 'ngx-loading';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { FilterForExercisePipe } from './filter-for-exercise.pipe';
 const appRoutes: Routes = [
   { path: 'index', component: IndexComponent, canActivate: [LoginService]  },
   { path: 'login', component: LoginComponent },
@@ -45,9 +47,11 @@ const appRoutes: Routes = [
     ExerciseEditComponent,
     FilterPipe,
     SortPipe,
-    RegisterComponent
+    RegisterComponent,
+    FilterForExercisePipe
   ],
   imports: [
+    CollapseModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     LoadingModule,

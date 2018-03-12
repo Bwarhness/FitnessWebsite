@@ -11,9 +11,33 @@ import { ApiService } from '../services/api.service';
 })
 export class ProgramListComponent implements OnInit {
   constructor(public login: LoginService, private router: Router, public programService: ProgramService, public _api:ApiService) {
+    this.programService.getPrograms() 
    }
 
   ngOnInit() {
+  }
+  getTrainingType(number){
+    if (number == 0) {
+      return "Styrke"
+    }
+    if (number == 10) {
+      return "Størrelse"
+    }
+    if (number == 20) {
+      return "Udholdenhed"
+    }
+
+  }
+  getDifficulty(number){
+    if (number == 0) {
+      return "Begynder"
+    }
+    if (number == 10) {
+      return "Advanceret"
+    }
+    if (number == 20) {
+      return "Expert"
+    }
   }
 
 }

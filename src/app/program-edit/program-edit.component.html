@@ -12,15 +12,15 @@
             <div class="card">
                 <h3 class="card-header">Program Information</h3>
                 <div class="card-block">
-                    <div class="input-group">
+                    <!-- <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Session gentagelser</span>
                         <input [(ngModel)]="sProgram.TimesToRepeat" name="SearchName" type="number" class="form-control" placeholder="" aria-describedby="basic-addon1">
                         <span class="input-group-addon" id="basic-addon2">Gange</span>
-                    </div>
+                    </div> -->
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Trænings type</span>
-                        <select class="form-control" [(ngModel)]="sProgram.Type">
+                        <select class="form-control" [(ngModel)]="sProgram.TrainingType">
                             <option value="0">Styrke</option>
                             <option value="10">Størrelse</option>
                             <option value="20">Udholdenhed</option>
@@ -30,13 +30,12 @@
 
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Sværhedsgrad</span>
-                        <select name="" id="" class="form-control" [(ngModel)]="sProgram.Difficulty">
+                        <select name="" id="" class="form-control" [(ngModel)]="sProgram.SkillLevel">
                             <option value="0">Begynder</option>
                             <option value="10">Øvede</option>
                             <option value="20">Expert</option>
                         </select>
                     </div>
-
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Beskrivelse</span>

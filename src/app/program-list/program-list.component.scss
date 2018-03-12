@@ -1,0 +1,11 @@
+.cardholder {
+    .hideBtn{
+        cursor: pointer;
+        opacity: 0.5;
+    }
+    :hover{
+        .hideBtn{
+            opacity: 1;
+            }
+    }
+}
