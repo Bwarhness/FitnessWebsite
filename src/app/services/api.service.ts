@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class ApiService {
   Token: any = '';
-  // Api = 'http://www.fitnessapi.webdesk-dev.dk'; 
-  Api = 'http://localhost:50590';
+  Api = 'http://www.fitnessapi.webdesk-dev.dk'; 
+  // Api = 'http://localhost:50590';
   
 
   constructor(public http: HttpClient) { }

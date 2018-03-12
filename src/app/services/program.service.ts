@@ -17,7 +17,7 @@ export class ProgramService {
     console.log(Id)
     this._api.generateHTTPPost('/api/Program/SelectProgram',{'Id':Id}).subscribe(
       (data) => {
-        this.toast.success("Du har nu valgt et program", "Tilykke!")
+        this.toast.success("Du har nu valgt et program, du kan nu åbne appen og se dit program.", "Tilykke!")
       }, (error) => {
         this.toast.error(error.error.error_description, "Fejl!")
       }
